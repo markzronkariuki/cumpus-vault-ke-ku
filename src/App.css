@@ -1,0 +1,181 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #4b9db6;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(42, 10, 224);
+}
+
+.App-link {
+  color: #08e26a;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-color: rgb(113, 19, 189);   /* White */
+  background-color: rgba(95, 93, 93, 0.5);   /* Semi-transparent black */
+}
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee .hero-title,
+.marquee .tagline {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 40s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}/* APP BACKGROUND */
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, sans-serif;
+  background: #f5f7fb;
+}
+
+/* HERO SECTION */
+.App-header{
+  background: linear-gradient(
+    rgba(0,0,0,0.5),
+    rgba(0,0,0,0.5)
+  ),
+
+}
+
+/* HERO TITLE */
+.hero-title{
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* TAGLINE */
+.tagline{
+  font-size: 1.3rem;
+  max-width: 700px;
+}
+
+/* BUTTONS */
+.btn-custom{
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-custom:hover{
+  background: #1fa855;
+  transform: scale(1.05);
+}
+
+/* CARDS */
+.card{
+  border: none;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.card:hover{
+  transform: translateY(-8px);
+}
+
+/* CARD ICONS */
+.card h1{
+  font-size: 4rem;
+}
+
+/* CARD TITLE */
+.card h4{
+  color: #002366;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  color: #002366;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* NAVBAR */
+.navbar{
+  background: #002366 !important;
+}
+
+.navbar-brand{
+  color: white !important;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-link{
+  color: white !important;
+  margin-left: 15px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp-btn{
+  background: #25D366;
+  color: white;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: bold;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+  .hero-title{
+    font-size: 2.5rem;
+  }
+
+  .tagline{
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .App-header{
+    height: 70vh;
+  }
+
+}
