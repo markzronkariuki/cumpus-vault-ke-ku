@@ -149,26 +149,7 @@ function App() {
           </div>
 
         </div>
-        <div className="container my-5">
-
-  <h2 className="text-center mb-4">
-    Find Us at Kenyatta University
-  </h2>
-
-  <div className="shadow rounded overflow-hidden">
-
-    <iframe
-      title="Campus Vault KE Map"
-      src="https://maps.google.com/maps?q=Kenyatta%20University%20Main%20Campus&t=&z=15&ie=UTF8&iwloc=&output=embed"
-      width="100%"
-      height="450"
-      style={{ border: 0 }}
-      loading="lazy"
-    ></iframe>
-
-  </div>
-
-</div>
+        
 
         {/* ROUTES */}
         <Routes>
