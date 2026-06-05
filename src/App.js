@@ -172,6 +172,7 @@ function App() {
 
         {/* ROUTES */}
         <Routes>
+          <Route path="/faq" element={<FAQ />} />
 
         <Route
   path="/bookstorage"

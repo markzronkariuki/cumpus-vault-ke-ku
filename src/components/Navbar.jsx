@@ -82,28 +82,24 @@ const Navbar = () => {
               >
                 Pricing
               </a>
-
               <a
                 href="/bookstorage"
                 className="nav-link text-white mx-2 fw-semibold"
               >
                 Book Storage
               </a>
-
               <a
                 href="/track"
                 className="nav-link text-white mx-2 fw-semibold"
               >
                 Track Item
               </a>
-
               <a
                 href="/faq"
                 className="nav-link text-white mx-2 fw-semibold"
               >
                 FAQ
               </a>
-
               <a
                 href="/contact"
                 className="nav-link text-white mx-2 fw-semibold"
@@ -116,13 +112,17 @@ const Navbar = () => {
 >
   Admin Login
 </a>
-
 <a
   href="/getbookings"
   className="nav-link text-white mx-2 fw-semibold"
 >
   Get Bookings
-</a>
+</a><button
+  onClick={Logout}
+  className="btn btn-danger ms-2"
+>
+  Logout
+</button>
 
 
               
