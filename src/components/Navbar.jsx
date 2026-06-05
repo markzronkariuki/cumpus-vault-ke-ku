@@ -110,12 +110,26 @@ const Navbar = () => {
               >
                 Contact
               </a>
+              <a
+  href="/admin-login"
+  className="nav-link text-white mx-2 fw-semibold"
+>
+  Admin Login
+</a>
+
+<a
+  href="/getbookings"
+  className="nav-link text-white mx-2 fw-semibold"
+>
+  Get Bookings
+</a>
+
 
               
 
               {/* WHATSAPP BUTTON */}
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/254116375166"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn rounded-pill px-4 ms-lg-3 mt-3 mt-lg-0 fw-bold"

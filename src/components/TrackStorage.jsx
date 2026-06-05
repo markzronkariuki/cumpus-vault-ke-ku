@@ -1,140 +1,111 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const TrackStorage = () => {
+function TrackStorage() {
 
   const [bookingId, setBookingId] = useState("");
   const [result, setResult] = useState(null);
+  const [message, setMessage] = useState("");
 
-  const handleTrack = () => {
+  const handleTrack = async (e) => {
 
-    // Sample data
-    if (bookingId === "CVK001") {
+    e.preventDefault();
 
-      setResult({
-        name: "Mark Kariuki",
-        storageType: "Medium Package",
-        status: "Securely Stored",
-        date: "15 May 2026"
-      });
+    const formData = new FormData();
+    formData.append("booking_id", bookingId);
 
-    } else {
+    try {
 
-      setResult({
-        error: "Booking not found."
-      });
+      const response = await axios.post(
+        "https://doreen.alwaysdata.net/api/trackstorage",
+        formData
+      );
+
+      if (response.data.booking) {
+
+        setResult(response.data.booking);
+        setMessage("");
+
+      } else {
+
+        setResult(null);
+        setMessage("Booking ID not found");
+
+      }
+
+    } catch (error) {
+
+      console.log(error);
+
+      setResult(null);
+      setMessage("Server connection failed");
 
     }
+
   };
 
   return (
 
     <div className="container py-5">
 
-      {/* TITLE */}
-      <div className="text-center mb-5">
+      <h2 className="text-center mb-4">
+        Track Storage
+      </h2>
 
-        <h1
-          className="fw-bold"
-          style={{ color: "#002366" }}
+      <form onSubmit={handleTrack}>
+
+        <input
+          type="text"
+          className="form-control mb-3"
+          placeholder="Enter Booking ID"
+          value={bookingId}
+          onChange={(e) =>
+            setBookingId(e.target.value)
+          }
+          required
+        />
+
+        <button
+          type="submit"
+          className="btn btn-success"
         >
-          Track Your Stored Items
-        </h1>
+          Track Storage
+        </button>
 
-        <p className="text-muted">
-          Enter your Booking ID to check status.
-        </p>
+      </form>
 
-      </div>
+      {message && (
 
-      {/* SEARCH CARD */}
-      <div className="row justify-content-center">
-
-        <div className="col-md-6">
-
-          <div className="card shadow border-0 rounded-4 p-4">
-
-            <label className="fw-bold mb-2">
-              Booking ID
-            </label>
-
-            <input
-              type="text"
-              className="form-control mb-3"
-              placeholder="Example: CVK001"
-              value={bookingId}
-              onChange={(e) =>
-                setBookingId(e.target.value)
-              }
-            />
-
-            <button
-              className="btn btn-success"
-              onClick={handleTrack}
-            >
-              Track Item
-            </button>
-
-          </div>
-
+        <div className="alert alert-danger mt-4">
+          {message}
         </div>
 
-      </div>
+      )}
 
-      {/* RESULTS */}
       {result && (
 
-        <div className="row justify-content-center mt-5">
+        <div className="card mt-4 shadow">
 
-          <div className="col-md-6">
+          <div className="card-body">
 
-            <div className="card shadow border-0 rounded-4 p-4">
+            <h3 className="text-success">
+              Storage Available
+            </h3>
 
-              {result.error ? (
+            <p>
+              <strong>Name:</strong>{" "}
+              {result.fullname}
+            </p>
 
-                <h5 className="text-danger">
-                  {result.error}
-                </h5>
+            <p>
+              <strong>Storage Type:</strong>{" "}
+              {result.storage_type}
+            </p>
 
-              ) : (
-
-                <>
-                  <h4
-                    className="fw-bold mb-4"
-                    style={{ color: "#002366" }}
-                  >
-                    Storage Details
-                  </h4>
-
-                  <p>
-                    <strong>Name:</strong>
-                    {" "}
-                    {result.name}
-                  </p>
-
-                  <p>
-                    <strong>Storage Type:</strong>
-                    {" "}
-                    {result.storageType}
-                  </p>
-
-                  <p>
-                    <strong>Stored On:</strong>
-                    {" "}
-                    {result.date}
-                  </p>
-
-                  <p>
-                    <strong>Status:</strong>
-                    {" "}
-                    <span className="badge bg-success">
-                      {result.status}
-                    </span>
-                  </p>
-
-                </>
-              )}
-
-            </div>
+            <p>
+              <strong>Item Description:</strong>{" "}
+              {result.item_description}
+            </p>
 
           </div>
 
@@ -145,6 +116,6 @@ const TrackStorage = () => {
     </div>
 
   );
-};
+}
 
 export default TrackStorage;

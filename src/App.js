@@ -10,6 +10,7 @@ import Navbar from './components/Navbar';
 import Carousel from './components/Carousel';
 import Chatbot from './components/Chatbot';
 
+
 // PAGES
 
 import FAQ from './components/FAQ';
@@ -17,6 +18,14 @@ import Contact from './components/Contact';
 import Pricing from './components/Pricing';
 import BookStorage from './components/BookStorage';
 import TrackStorage from './components/TrackStorage';
+import AdminLogin from "./AdminLogin";
+import GetBookings from "./components/GetBookings";
+
+
+
+
+
+
 
 function App() {
 
@@ -107,6 +116,7 @@ function App() {
                 </p>
 
               </div>
+              
 
             </div>
 
@@ -139,6 +149,26 @@ function App() {
           </div>
 
         </div>
+        <div className="container my-5">
+
+  <h2 className="text-center mb-4">
+    Find Us at Kenyatta University
+  </h2>
+
+  <div className="shadow rounded overflow-hidden">
+
+    <iframe
+      title="Campus Vault KE Map"
+      src="https://maps.google.com/maps?q=Kenyatta%20University%20Main%20Campus&t=&z=15&ie=UTF8&iwloc=&output=embed"
+      width="100%"
+      height="450"
+      style={{ border: 0 }}
+      loading="lazy"
+    ></iframe>
+
+  </div>
+
+</div>
 
         {/* ROUTES */}
         <Routes>
@@ -155,6 +185,19 @@ function App() {
   path="/contact"
   element={<Contact />}
 />
+<Route
+  path="/admin-login"
+  element={<AdminLogin />}
+/>
+
+
+<Route
+  path="/bookings"
+  element={<GetBookings />}
+/>
+<Route path="/getbookings" element={<GetBookings />} />
+
+
 
           
 
@@ -164,10 +207,7 @@ function App() {
 
       {/* CHATBOT */}
       <Chatbot />
-      {/* FAQ  */}
-      <FAQ />
-      {/* Contact  */}
-      <Contact />
+
       {/* pricing  */}
       <Pricing />
 
