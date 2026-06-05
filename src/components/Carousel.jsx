@@ -41,7 +41,7 @@ const Carousel = () => {
                 alt="Campus Vault KE"
                 className="d-block w-100"
                 style={{
-                  height: "90vh",
+                  height: "40vh",
                   objectFit: "cover",
                   filter: "brightness(60%)",
                 }}
@@ -50,7 +50,7 @@ const Carousel = () => {
               {/* Overlay Content */}
               <div
                 className="position-absolute top-50 start-50 translate-middle text-center text-white"
-                style={{ width: "90%" }}
+                style={{ width: "60%" }}
               >
                 <h5
                   className="fw-bold text-uppercase mb-3"
@@ -65,7 +65,7 @@ const Carousel = () => {
                 <h1
                   className="fw-bold mb-4"
                   style={{
-                    fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                    fontSize: "clamp(2.5rem, 5vw, 4rem)",
                     lineHeight: "1.2",
                   }}
                 >
@@ -77,7 +77,7 @@ const Carousel = () => {
                   className="mb-4"
                   style={{
                     fontSize: "clamp(1rem, 2vw, 1.4rem)",
-                    maxWidth: "700px",
+                    maxWidth: "600px",
                     margin: "0 auto",
                   }}
                 >
@@ -88,15 +88,8 @@ const Carousel = () => {
                   </span>
                 </p>
 
-                <div className="d-flex justify-content-center gap-3 flex-wrap">
-                  <button className="btn btn-success btn-lg px-4 py-3 rounded-pill fw-bold">
-                    Book Storage Now
-                  </button>
-
-                  <button className="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold">
-                    View Pricing
-                  </button>
-                </div>
+                
+                
               </div>
             </div>
           </div>
@@ -109,7 +102,7 @@ const Carousel = () => {
                 alt="Secure Storage"
                 className="d-block w-100"
                 style={{
-                  height: "90vh",
+                  height: "40vh",
                   objectFit: "cover",
                   filter: "brightness(60%)",
                 }}
@@ -122,7 +115,7 @@ const Carousel = () => {
                 <h1
                   className="fw-bold mb-4"
                   style={{
-                    fontSize: "clamp(2.5rem, 6vw, 5rem)",
+                    fontSize: "clamp(2.5rem, 5vw, 4rem)",
                   }}
                 >
                   Safe. Affordable. <br />
@@ -149,7 +142,7 @@ const Carousel = () => {
                 alt="Holiday Storage"
                 className="d-block w-100"
                 style={{
-                  height: "90vh",
+                  height: "40vh",
                   objectFit: "cover",
                   filter: "brightness(60%)",
                 }}
@@ -157,7 +150,7 @@ const Carousel = () => {
 
               <div
                 className="position-absolute top-50 start-50 translate-middle text-center text-white"
-                style={{ width: "90%" }}
+                style={{ width: "60%" }}
               >
                 <h1
                   className="fw-bold mb-4"

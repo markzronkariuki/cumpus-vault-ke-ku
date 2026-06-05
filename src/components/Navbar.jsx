@@ -112,12 +112,8 @@ const Navbar = () => {
 >
   Admin Login
 </a>
-<a
-  href="/getbookings"
-  className="nav-link text-white mx-2 fw-semibold"
->
-  Get Bookings
-</a><button
+
+<button
   onClick={Logout}
   className="btn btn-danger ms-2"
 >
