@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const Navbar = () => {
-  const [user, setUser] = useState(null);
+  const [, setUser] = useState(null);
 
   // GET LOGGED USER
   useEffect(() => {
